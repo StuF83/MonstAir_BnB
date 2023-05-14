@@ -78,3 +78,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Cloudinary for user picture upload
+gem "cloudinary"
