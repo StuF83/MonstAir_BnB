@@ -40,8 +40,8 @@ How to contribuete:
 
 Some additional guidelines to keep in mind:
 
-    Make your branch name relevant to the changes you are making (for example, "nav_bar_css" for changes to the navigation bar CSS)
-    Keep your pull requests short to make them easier to review. The more code there is to review, the longer the process will take.
+ - Make your branch name relevant to the changes you are making (for example, "nav_bar_css" for changes to the navigation bar CSS)
+ - Keep your pull requests short to make them easier to review. The more code there is to review, the longer the process will take.
     
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp]                 (https://www.lewagon.com) team.
