@@ -1,6 +1,6 @@
 # Monster BnB
 
-## How to contribuete:
+## How to contribute:
 
 **1.  Clone the repository**
 
