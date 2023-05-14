@@ -25,6 +25,8 @@ This will create a new branch for you to work on, separate from the main branch 
 
 **3.  Make changes and commit them**
 
+Run `bundle install` and `yarn install`
+
 Make changes to the code as desired
 
 In the command line, type "git status" to see which files have been changed
