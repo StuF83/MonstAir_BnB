@@ -1,4 +1,4 @@
-# Monster BnB
+# MonstAir BnB
 
 ## How to contribute:
 
