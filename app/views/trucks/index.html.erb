@@ -3,6 +3,7 @@
 <br>
 
 <ul>
+  <% @trucks = trucks if @trucks.nil? %>
   <% @trucks.each do |truck| %>
     <li><%= link_to("#{truck.name}", truck_path(truck)) %></li>
     <br>
