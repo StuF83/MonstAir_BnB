@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+
+10.times do
+  @truck = Truck.create(
+    name: Faker::Name.name,
+    description: Faker::Company.type,
+    daily_fee: Faker::Number.number(digits: 3)
+  )
+  puts "Name:#{@truck.name}\nDaily Fee:#{@truck.description}\nDaily Fee:#{@truck.daily_fee}\n\n"
+end

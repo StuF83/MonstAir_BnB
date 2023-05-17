@@ -1,8 +1,11 @@
-<p>hello world</p>
+<h1>PICK A TRUCK</h1>
+<br>
 
 <ul>
-<li>
-<%= @trucks.first.name %>
-
-</li>
+  <% @trucks.each do |truck| %>
+    <li><%= truck.name %></li>
+    <br>
+  <% end %>
 </ul>
+
+<%= link_to("HOME PAGE", root_path) %>
