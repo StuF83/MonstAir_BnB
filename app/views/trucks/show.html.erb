@@ -1,1 +1,10 @@
-<p><%= @truck.name %></p>
+<h1><%= @truck.name.upcase %></h1>
+<br>
+<h4><%= "Description"%></h4>
+<p><%= "#{@truck.description}" %></p>
+<h4><%="Daily Rental Cost" %></h4>
+<p><%= "£#{@truck.daily_fee }"%></p>
+
+<%= link_to("HOME PAGE", root_path) %>
+<br>
+<%= link_to("VIEW MORE TRUCKS", trucks_path ) %>
