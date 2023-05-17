@@ -65,5 +65,58 @@ Once the review is complete and any necessary changes have been made, the pull r
  - Make your branch name relevant to the changes you are making (for example, "nav_bar_css" for changes to the navigation bar CSS)
  - Keep your pull requests short to make them easier to review. The more code there is to review, the longer the process will take.
     
+---
+
+## How to review code:
+
+**1. Navigate to the GitHub repository homepage.**
+
+Click on the "Pull requests" tab.
+
+Select the pull request you want to review.
+
+Read the details of the pull request, which will provide information about the target branch and the current branch.
+
+
+**2. To test the code:**
+
+Open your command line interface.
+
+Type the following commands:
+
+
+```
+CLI
+
+# Download the branch you want to test:
+git fetch origin <name of branch to test>
+
+# Switch to the branch you want to test:
+git checkout <name of branch to test>
+
+# Ensure the branch is up to date:
+git pull
+```
+
+The code should now be available locally in your code editor.
+Run rails s to start the server and test that the added features work correctly.
+
+**3. To review the pull request:**
+
+Once you have finished testing the code, go back to the GitHub pull request page.
+
+Click on the "Add your review" link.
+
+You will be able to see the added code highlighted in green and the removed code highlighted in red.
+
+
+**4. To merge into the main branch:**
+
+After reviewing the code and ensuring it can be safely merged, click on the green "Review changes" dropdown button.
+
+Add any comments you have and then select "Approve".
+
+If changes need to be made, select "Request Changes".
+
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp]                 (https://www.lewagon.com) team.
