@@ -1,4 +1,23 @@
-<h1>WELCOME TO MONST-AIR TRUCK B'N'B</h1>
+<head>
+  <link rel="stylesheet" href="/app/assets/stylesheets/pages/_home.scss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
 
-
-<%= link_to("VIEW ALL TRUCKS", trucks_path) %>
+<body>
+ <div>
+    <h1 class="header">MONST-AIR TRUCK B'N'B</h1>
+  </div>
+  <div>
+    <div class="link" id="trucks">
+      <%= link_to("VIEW ALL TRUCKS", trucks_path) %>
+    </div>
+    <div class="link">
+      <%= link_to("RENT YOUR TRUCK", trucks_path) %>
+    </div>
+  </div>
+  <div class="truckimage">
+    <img src="<%=asset_path('ht.jpg')%>/" alt="image here">
+  </div>
+</body>
