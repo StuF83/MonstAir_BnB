@@ -14,10 +14,18 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-<nav class="navbar">
-  <p>
-    Monster BnB
+<nav class="navbar-lewagon">
+  <p class ="nav-left">
+    MonstAir BnB
   </p>
+
+  <%= form_with url: "/search", method: :get do |form| %>
+  <%= form.label :query, "Location:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+  <% end %>
+
+  <i class="fa-solid fa-user nav-right"></i>
 </nav>
 
     <%= yield %>
