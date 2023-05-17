@@ -1,11 +1,33 @@
-<h1>PICK A TRUCK</h1>
-<br>
+<head>
+  <link rel="stylesheet" href="/app/assets/stylesheets/pages/_index.scss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
 
-<ul>
-  <% @trucks.each do |truck| %>
-    <li><%= truck.name %></li>
+<body>
+  <div class="header">
+    <div class="logo-small">
+      <img src="<%=asset_path('ht.jpg')%>/" alt="logo here">
+    </div>
+    <div class="headermenu">
+      <ul>
+        <li><%= link_to("HOME PAGE", root_path) %></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="truckscontent">
+    <h1>PICK A TRUCK</h1>
     <br>
-  <% end %>
-</ul>
+    <ul>
+      <% @trucks.each do |truck| %>
+        <li><%= truck.name %></li>
+        <br>
+      <% end %>
+    </ul>
+  </div>
 
-<%= link_to("HOME PAGE", root_path) %>
+
+  <%= link_to("HOME PAGE", root_path) %>
+</body>

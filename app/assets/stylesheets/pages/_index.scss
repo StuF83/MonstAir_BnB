@@ -1,2 +1,28 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background: white;
+  color: white;
+  font-size: 30px;
+  padding: 60px;
+}
+
+.logo-small {
+  position: relative;
+}
+
+.logo-small img {
+  position: fixed;
+  top: 0;
+  left: 5;
+  width: 15%;
+}
+
+.truckscontent{
+  margin-top: 220px;
+}
