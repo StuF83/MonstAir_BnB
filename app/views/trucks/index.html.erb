@@ -1,9 +1,10 @@
-<h1>PICK A TRUCK</h1>
+<h1>CHECK OUT OUR TRUCKS</h1>
+<h4>Click for details</h4>
 <br>
 
 <ul>
   <% @trucks.each do |truck| %>
-    <li><%= truck.name %></li>
+    <li><%= link_to("#{truck.name}", truck_path(truck)) %></li>
     <br>
   <% end %>
 </ul>
