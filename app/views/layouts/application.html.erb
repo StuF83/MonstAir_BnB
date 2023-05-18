@@ -22,6 +22,8 @@
   <%= form_tag(search_trucks_path, method: "get") do %>
     <%= label_tag(:q, "Location:") %>
     <%= text_field_tag(:location) %>
+    <%= label_tag(:q, "daily_fee:") %>
+    <%= text_field_tag(:daily_fee) %>
     <%= submit_tag("Search") %>
   <% end %>
 
@@ -29,5 +31,7 @@
 </nav>
 
     <%= yield %>
+
+
   </body>
 </html>

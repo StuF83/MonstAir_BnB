@@ -8,7 +8,7 @@ class TrucksController < ApplicationController
   end
 
   def search
-    @trucks = Truck.where(location: params[:location])
+    @trucks = Truck.where(location: params[:location].downcase, daily_fee: params[:daily_fee])
     render "index", locals: { trucks: @trucks }
   end
 end
