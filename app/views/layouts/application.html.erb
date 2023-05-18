@@ -14,6 +14,24 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+<nav class="navbar-lewagon">
+  <p class ="nav-left">
+    MonstAir BnB
+  </p>
+
+  <%= form_tag(search_trucks_path, method: "get") do %>
+    <%= label_tag(:q, "Location:") %>
+    <%= text_field_tag(:location) %>
+    <%= label_tag(:q, "daily_fee:") %>
+    <%= text_field_tag(:daily_fee) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+  <i class="fa-solid fa-user nav-right"></i>
+</nav>
+
     <%= yield %>
+
+
   </body>
 </html>

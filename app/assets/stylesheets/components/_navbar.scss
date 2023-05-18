@@ -1,4 +1,6 @@
 .navbar-lewagon {
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   background: white;
 }
@@ -9,4 +11,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-left {
+  margin-left: 20px;
+}
+
+.nav-right {
+  margin-right: 20px;
 }

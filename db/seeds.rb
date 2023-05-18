@@ -8,11 +8,14 @@
 
 require 'faker'
 
-10.times do
+cities = ["hackney", "dalston", "shorditch", "greenwhich", "enfield"]
+fee = [100, 150, 200, 250, 300]
+30.times do
   @truck = Truck.create(
     name: Faker::Name.name,
     description: Faker::Company.type,
-    daily_fee: Faker::Number.number(digits: 3)
+    daily_fee: fee.sample,
+    location: cities.sample
   )
-  puts "Name:#{@truck.name}\nDaily Fee:#{@truck.description}\nDaily Fee:#{@truck.daily_fee}\n\n"
+  puts "Name:#{@truck.name}\nDaily Fee:#{@truck.description}\nDaily Fee:#{@truck.daily_fee}\nLocation:#{@truck.location}"
 end
