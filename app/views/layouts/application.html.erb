@@ -15,9 +15,7 @@
     <p class="alert"><%= alert %></p>
 
 <nav class="navbar-lewagon">
-  <p class ="nav-left">
-    MonstAir BnB
-  </p>
+  <a class ="nav-left" href="/">MonstAir BnB</a>
 
   <%= form_tag(search_trucks_path, method: "get") do %>
     <%= label_tag(:q, "Location:") %>
