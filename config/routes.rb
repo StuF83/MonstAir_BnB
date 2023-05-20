@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   # get "booking/:id", to: "bookings#show"
   get 'trucks/search', to: 'trucks#search', as: 'search_trucks'
+  get '/bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: 'confirmation'
 
   # get "trucks/:id", to: "trucks#show", as: 'truck'
   # get "trucks", to: "trucks#index"

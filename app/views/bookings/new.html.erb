@@ -1,12 +1,22 @@
-<h1>Booking Confirmation</h1>
+<h1>Booking Summary</h1>
 
 <p>Truck: <%= @booking.truck_id %></p>
+<% id = @booking_truck_d %>
 <p>Start Date: <%= @booking.start_date %></p>
+<% start = @booking_start_date %>
 <p>End Date: <%= @booking.end_date %></p>
+<% start = @booking.end_date %>
 <p>Total Price: <%= "#{@booking.total_cost}" %>
+<% price = @booking.total_cost %>
 <br>
-
+<br>
+<%= link_to("VIEW MORE TRUCKS", trucks_path ) %>
+<br>
+<br>
+<%= link_to("CONFIRM BOOKING", truck_bookings_path(truck: @booking.truck, end_date: @booking.end_date, start_date: @booking.start_date, total_cost: @booking.total_cost), data: {turbo_method: :post}) %>
+<br>
 <br>
 <%= link_to("HOME PAGE", root_path) %>
+<br>
 <br>
 <%= link_to("VIEW MORE TRUCKS", trucks_path ) %>
