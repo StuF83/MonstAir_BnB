@@ -1,54 +1,24 @@
+<h1>CHECK OUT OUR TRUCKS</h1>
+<h4>Click for details</h4>
+
 <div class="pagebody everything">
+
   <div class="grid">
-    <div class="grid-item">
-      <div class="card">
-        <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
-        <div class="card-content">
-          <h1 class="card-header">Truck Name</h1>
-          <p class="card-text">Truck description</p>
-          <button class="card-btn">More info<span>&rarr;</span></button>
-        </div>
-      </div>
-    </div>
-    <div class="grid-item">
-      <div class="card">
-        <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
-        <div class="card-content">
-          <h1 class="card-header">Truck Name</h1>
-          <p class="card-text">Truck description</p>
-          <button class="card-btn">More info<span>&rarr;</span></button>
-        </div>
-      </div>
-    </div>
-    <div class="grid-item">
-      <div class="card">
-        <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
-        <div class="card-content">
-          <h1 class="card-header">Truck Name</h1>
-          <p class="card-text">Truck description</p>
-          <button class="card-btn">More info<span>&rarr;</span></button>
-        </div>
-      </div>
-    </div>
+    <% @trucks = trucks if @trucks.nil? %>
+    <% @trucks.each do |truck| %>
       <div class="grid-item">
-      <div class="card">
-        <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
-        <div class="card-content">
-          <h1 class="card-header">Truck Name</h1>
-          <p class="card-text">Truck description</p>
-          <button class="card-btn">More info<span>&rarr;</span></button>
+        <div class="card">
+          <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
+          <div class="card-content">
+            <h1 class="card-header"><%= link_to("#{truck.name}", truck_path(truck)) %></h1>
+            <p class="card-text">Truck description</p>
+            <button class="card-btn">More info<span>&rarr;</span></button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="grid-item">
-      <div class="card">
-        <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
-        <div class="card-content">
-          <h1 class="card-header">Truck Name</h1>
-          <p class="card-text">Truck description</p>
-          <button class="card-btn">More info<span>&rarr;</span></button>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
+
 </div>
+
+<%#= link_to("HOME PAGE", root_path) %>
