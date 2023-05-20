@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
   def new
-    @booking = Booking.new(booking_params)
+    @truck = Truck.find(params[:truck_id])
+    @booking = @truck.bookings.new(booking_params)
+    num_days = (@booking.end_date - @booking.start_date).to_i
+    @booking.total_cost = num_days * @truck.daily_fee
   end
 
   def show
@@ -13,19 +16,18 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @truck = Truck.find(params[:truck_id])
-    @booking = @truck.bookings.new(booking_params)
+    truck = Truck.find(params[:truck_id])
+    booking = Booking.new(truck: truck, start_date: params[:start_date], end_date: params[:end_date], total_cost: params[:total_cost], user: User.first)
 
-    @user = User.first
-    @booking.user_id = 1
-
-    num_days = (@booking.end_date - @booking.start_date).to_i
-    @booking.total_cost = num_days * @truck.daily_fee
-    if @booking.save!
-      redirect_to truck_booking_path(@truck, @booking)
+    if booking.save!
+      redirect_to confirmation_path(booking)
     else
       render 'trucks/show'
     end
+  end
+
+  def confirmation
+    @booking = Booking.find(params[:booking_id])
   end
 
   private
