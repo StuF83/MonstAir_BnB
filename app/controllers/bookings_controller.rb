@@ -1,17 +1,31 @@
 class BookingsController < ApplicationController
-  # def show
-  #   user = User.create(email: "test1@test", password: "1234567")
-  #   truck = Truck.create(name: "My Big Truck", description: "Its a big truck", daily_fee: "123")
-  #   @booking = Booking.new(start_date: "01/02/2010", end_date: "02/03/2011")
-  #   @booking.truck = truck
-  #   @booking.user = user
-  #   @booking.save!
-
-  #   render "trucks/show", locals: { booking: @booking }
-  # end
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
   def index
     @truck = Truck.find(params[:truck_id])
     @bookings = @truck.bookings
+  end
+
+  def create
+    @truck = Truck.find(params[:truck_id])
+    @booking = @truck.bookings.new(booking_params)
+    @booking.user = current_user
+
+    num_days = (@booking.end_date - @booking.start_date).to_i
+    @booking.total_cost = num_days * @truck.daily_fee
+
+    if @booking.save
+      redirect_to truck_booking_path(@truck, @booking)
+    else
+      render 'trucks/show'
+    end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
