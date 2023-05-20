@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   # get "trucks", to: "trucks#index"
 
   resources :trucks do
-    resources :bookings, only: [:create, :show]
+    resources :bookings, only: [:new, :create, :show]
   end
 end
