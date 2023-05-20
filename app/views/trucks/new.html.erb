@@ -1,0 +1,11 @@
+<h1>Rent your truck here!</h1>
+
+<%= form_with model: @truck do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :daily_fee %>
+  <%= f.number_field :daily_fee %>
+  <%= f.submit %>
+<% end %>
