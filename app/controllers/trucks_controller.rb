@@ -20,7 +20,7 @@ class TrucksController < ApplicationController
   def create
     @truck = Truck.new(truck_params)
     @truck.save
-    redirect_to truck_path(@truck)
+    render 'owner_show', locals: { truck: @truck }
   end
 
   private

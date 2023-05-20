@@ -1,6 +1,7 @@
 class Truck < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
+  belongs_to :owner, class_name: "User", foreign_key: "user_id"
 
   validates :name, presence: true
   validates :description, presence: true
