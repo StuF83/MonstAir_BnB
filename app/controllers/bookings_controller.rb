@@ -16,8 +16,9 @@ class BookingsController < ApplicationController
   end
 
   def create
+    user = User.new(email: "John@test", password: "123456")
     truck = Truck.find(params[:truck_id])
-    booking = Booking.new(truck: truck, start_date: params[:start_date], end_date: params[:end_date], total_cost: params[:total_cost], user: User.first)
+    booking = Booking.new(truck: truck, start_date: params[:start_date], end_date: params[:end_date], total_cost: params[:total_cost], user: user)
 
     if booking.save!
       redirect_to confirmation_path(booking)
