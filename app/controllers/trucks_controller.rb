@@ -18,8 +18,10 @@ class TrucksController < ApplicationController
   end
 
   def create
+    user = User.find(1)
     @truck = Truck.new(truck_params)
-    @truck.save
+    @truck.owner = user
+    @truck.save!
     render 'owner_show', locals: { truck: @truck }
   end
 
