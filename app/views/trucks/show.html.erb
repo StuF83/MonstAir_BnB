@@ -7,6 +7,16 @@
 <h4><%="location" %></h4>
 <p><%= "#{@truck.location }"%></p>
 
+<%= form_with(model: [@truck, @booking], url: truck_bookings_path(@truck)) do |form| %>
+  <%= form.label :start_date %>
+  <%= form.date_field :start_date %>
+
+  <%= form.label :end_date %>
+  <%= form.date_field :end_date %>
+
+  <%= form.submit "BOOK THIS TRUCK" %>
+<% end %>
+
 <%= link_to("HOME PAGE", root_path) %>
 <br>
 <%= link_to("VIEW MORE TRUCKS", trucks_path ) %>

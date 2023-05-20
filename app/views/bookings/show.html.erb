@@ -1,0 +1,12 @@
+<h1>Booking Confirmation</h1>
+
+<p>Truck: <%= @booking.truck.name %></p>
+<p>Start Date: <%= @booking.start_date %></p>
+<p>End Date: <%= @booking.end_date %></p>
+<p>Total Price: <%= @booking.total_cost %>
+<br>
+<%= link_to "Back To Truck", truck_path(@booking.truck) %>
+<br>
+<%= link_to("HOME PAGE", root_path) %>
+<br>
+<%= link_to("VIEW MORE TRUCKS", trucks_path ) %>
