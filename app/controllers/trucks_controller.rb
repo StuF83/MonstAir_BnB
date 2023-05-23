@@ -25,10 +25,13 @@ class TrucksController < ApplicationController
     @truck.owner = @user
     @truck.owner_first_name = @user.first_name
     @truck.owner_second_name = @user.last_name
-    @truck.save!
+    if @truck.save
+      flash[:notice] = "HERE'S YOUR NEW LISTING!"
+      redirect_to truck_path(@truck)
+    else
+      render :new
+    end
   end
-
-
 
   private
   def truck_params

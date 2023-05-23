@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'user/area', to: 'pages#user', as: 'user_area'
 
 
+
+
   # get "trucks/:id", to: "trucks#show", as: 'truck'
   # get "trucks", to: "trucks#index"
 
