@@ -1,4 +1,6 @@
 class TrucksController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
     @trucks = Truck.all
   end
