@@ -18,15 +18,17 @@ class TrucksController < ApplicationController
   end
 
   def create
-    user = User.find(1)
+    @user = current_user
     @truck = Truck.new(truck_params)
-    @truck.owner = user
+    @truck.owner = @user
+    @truck.owner_first_name = @user.first_name
+    @truck.owner_second_name = @user.last_name
     @truck.save!
-    render 'owner_show', locals: { truck: @truck }
   end
 
-  private
 
+
+  private
   def truck_params
     params.require(:truck).permit(:name, :description, :daily_fee)
   end

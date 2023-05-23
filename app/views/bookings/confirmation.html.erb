@@ -3,7 +3,13 @@
 <%= "Booking ID: #{@booking.id}"  %>
 <br>
 <br>
+<%= "User Name: #{@booking.user.first_name}"  %>
+<br>
+<br>
 <%= "User ID: #{@booking.user.id}"  %>
 <br>
 <br>
 <%= "Truck Name: #{@booking.truck.name}" %>
+<br>
+<br>
+<p>VIEW THIS BOOKING ON YOUR <%= link_to("USER AREA", user_area_path) %><p>
