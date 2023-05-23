@@ -26,26 +26,11 @@
   <% end %>
 
   <div class="nav-right">
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to trucks_path do %>
-          <i class="fa-solid fa-user"></i>
-        <% end %>
-      <% else %>
-        <%= link_to new_user_session_path do %>
-          <i class="fa-solid fa-user"></i>
-        <% end %>
-      <% end %>
-    </div>
-
-    <%= link_to "Log OOF", destroy_user_session_path, data: {turbo_method: :delete} %>
+     <%= render "shared/navbar" %>
   </div>
 
 
 </nav>
-
     <%= yield %>
-
-
   </body>
 </html>

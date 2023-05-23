@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   # get "booking/:id", to: "bookings#show"
+  get 'trucks/:id/owner_show', to: 'trucks#owner_show', as: 'truck_owner_show'
   get 'trucks/search', to: 'trucks#search', as: 'search_trucks'
   get '/bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: 'confirmation'
+  get 'user/area', to: 'pages#user', as: 'user_area'
+
 
   # get "trucks/:id", to: "trucks#show", as: 'truck'
   # get "trucks", to: "trucks#index"
