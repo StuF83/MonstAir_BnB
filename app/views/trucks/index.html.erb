@@ -1,6 +1,3 @@
-<h1>CHECK OUT OUR TRUCKS</h1>
-<h4>Click for details</h4>
-
 <div class="pagebody everything">
 
   <div class="grid">
@@ -11,8 +8,12 @@
           <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
           <div class="card-content">
             <h1 class="card-header"><%= link_to("#{truck.name}", truck_path(truck)) %></h1>
-            <p class="card-text">Truck description</p>
-            <button class="card-btn">More info<span>&rarr;</span></button>
+            <ul class="card-text">
+              <li>some</li>
+              <li>thing</li>
+              <li>to </li>
+              <li>say</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -20,5 +21,3 @@
   </div>
 
 </div>
-
-<%#= link_to("HOME PAGE", root_path) %>
