@@ -18,7 +18,7 @@ class TrucksController < ApplicationController
   end
 
   def create
-    user = User.find(1)
+    user = current_user
     @truck = Truck.new(truck_params)
     @truck.owner = user
     @truck.save!

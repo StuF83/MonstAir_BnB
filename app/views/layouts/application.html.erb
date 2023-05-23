@@ -27,7 +27,8 @@
 
   <div class="nav-right">
     <div>
-      <% if user_signed_in? %>
+      <% if current_user %>
+        <p>Hi <%= current_user.email %></p>
         <%= link_to trucks_path do %>
           <i class="fa-solid fa-user"></i>
         <% end %>

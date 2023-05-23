@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    user = User.new(email:"test@test.com", password:"123456")
+    user = current_user
     truck = Truck.find(params[:truck_id])
     booking = Booking.new(truck: truck, start_date: params[:start_date], end_date: params[:end_date], total_cost: params[:total_cost], user: user)
 

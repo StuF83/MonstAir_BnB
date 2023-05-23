@@ -6,6 +6,8 @@
 <p><%= "£#{@truck.daily_fee }"%></p>
 <h4><%="location" %></h4>
 <p><%= "#{@truck.location }"%></p>
+<h4><%="owner" %></h4>
+<p><%= "#{@truck.owner.email }"%></p>
 
 <%= form_with(model: [@truck, @booking], url: new_truck_booking_path(@truck), method: :get) do |form| %>
   <%= form.label :start_date %>
