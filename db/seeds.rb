@@ -46,7 +46,6 @@ monster_features = [
   "parking sensors",
   "London Congestion Charge included",
   "child seat fitted"
-
 ]
 fee = [100, 150, 200, 250, 300]
 
@@ -59,5 +58,5 @@ fee = [100, 150, 200, 250, 300]
     location: cities.sample
   )
   names.delete(random_name)
-  puts "Name:#{@truck.name}\nDescription:#{@truck.description}\nDaily Fee:#{@truck.daily_fee}\nLocation:#{@truck.location}"
+  puts "Name:#{@truck.name}\nDaily Fee:#{@truck.daily_fee}\nLocation:#{@truck.location}"
 end
