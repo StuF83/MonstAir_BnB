@@ -40,23 +40,43 @@ names = [
 ]
 
 monster_features = [
-  "cup holder",
-  "power stearing",
-  "selfie-stick holder",
-  "parking sensors",
+  "Cup holder",
+  "Power stearing",
+  "Selfie-stick holder",
+  "Parking sensors",
   "London Congestion Charge included",
-  "child seat fitted"
+  "Child seat fitted",
+  "Cruise controll",
+  "airbags",
+  "climage controll",
+  "2,000 BHp Engine",
+  "Tire Height: 1.17 meters",
+  "Fule consumption 6mpg",
+  "Top Speed 70mph",
+  "Car crushability level 11",
+  "Fluffy dice",
+  "Cruise controll",
+  "One carefull owner",
+  "Sunroof"
 ]
 fee = [100, 150, 200, 250, 300]
 
-28.times do
+30.times do
   random_name = names.sample
+  names.delete(random_name)
   @truck = Truck.create(
     name: random_name,
     description: Faker::Company.type,
     daily_fee: fee.sample,
     location: cities.sample
   )
-  names.delete(random_name)
+  while @truck.features.size < 4
+    feature = Feature.create(description: monster_features.sample)
+    @truck.features << feature unless @truck.features.include?(feature)
+  end
+  @truck.save!
+
   puts "Name:#{@truck.name}\nDaily Fee:#{@truck.daily_fee}\nLocation:#{@truck.location}"
+  @truck.features.each { |e| puts e.description }
+  puts "\n"
 end
