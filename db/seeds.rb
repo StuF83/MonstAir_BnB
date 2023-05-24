@@ -54,17 +54,18 @@ monster_features = [
   "London Congestion Charge included",
   "Child seat fitted",
   "Cruise controll",
-  "airbags",
-  "climage controll",
+  "Airbags",
+  "Climage controll",
   "2,000 BHp Engine",
   "Tire Height: 1.17 meters",
   "Fule consumption 6mpg",
   "Top Speed 70mph",
-  "Car crushability level 11",
+  "Car crushability rating 11",
   "Fluffy dice",
   "Cruise controll",
   "One carefull owner",
-  "Sunroof"
+  "Sunroof",
+  "Gun rack"
 ]
 
 fee = [
@@ -76,10 +77,10 @@ fee = [
 ]
 
 User.create(first_name: "Homer", last_name: "Simpson", email: "homer@simpson.com", password: "password")
-User.create(first_name: "Evel ", last_name: "Knievel", email: "evel@knievel.com", password: "password")
-User.create(first_name: "Robbie ", last_name: "Knievel", email: "robbie@knievel.com", password: "password")
-User.create(first_name: "Betsy ", last_name: "Gardner", email: "betsy@gardner.com", password: "password")
-User.create(first_name: "Jessie ", last_name: "Graff", email: "jessie@graff.com", password: "password")
+User.create(first_name: "Evel", last_name: "Knievel", email: "evel@knievel.com", password: "password")
+User.create(first_name: "Robbie", last_name: "Knievel", email: "robbie@knievel.com", password: "password")
+User.create(first_name: "Betsy", last_name: "Gardner", email: "betsy@gardner.com", password: "password")
+User.create(first_name: "Jessie", last_name: "Graff", email: "jessie@graff.com", password: "password")
 
 users = User.all
 
@@ -94,8 +95,9 @@ users = User.all
     owner: users.sample
   )
   while @truck.features.size < 4
-    feature = Feature.create(description: monster_features.sample)
-    @truck.features << feature unless @truck.features.include?(feature)
+    new_feature = Feature.create(description: monster_features.sample)
+    truck_features = @truck.features.map(&:description)
+    @truck.features << new_feature unless truck_features.include?(new_feature.description)
   end
   @truck.save!
 
@@ -104,5 +106,4 @@ users = User.all
   puts "Location:#{@truck.location}"
   @truck.features.each { |e| puts e.description }
   puts "\n"
-
 end

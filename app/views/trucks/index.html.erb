@@ -7,7 +7,10 @@
         <div class="card">
           <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
           <div class="card-content">
-            <h1 class="card-header"><%= link_to("#{truck.name}", truck_path(truck)) %></h1>
+          <div class="card-header">
+            <h1><%= link_to("#{truck.name}", truck_path(truck)) %></h1>
+            <p>Owner: <%= "#{truck.owner.first_name} #{truck.owner.last_name}" %></p>
+          </div>
             <ul class="card-text">
               <% truck.features.each do |feature| %>
                 <li><%= feature.description %></li>
