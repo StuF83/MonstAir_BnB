@@ -1,5 +1,4 @@
 <div class="pagebody everything">
-
   <div class="grid">
     <% @trucks = trucks if @trucks.nil? %>
     <% @trucks.each do |truck| %>
@@ -9,15 +8,13 @@
           <div class="card-content">
             <h1 class="card-header"><%= link_to("#{truck.name}", truck_path(truck)) %></h1>
             <ul class="card-text">
-              <li>some</li>
-              <li>thing</li>
-              <li>to </li>
-              <li>say</li>
+              <% truck.features.each do |feature| %>
+                <li><%= feature.description %></li>
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
 </div>
