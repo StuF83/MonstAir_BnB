@@ -75,6 +75,14 @@ fee = [
   300
 ]
 
+User.create(first_name: "Homer", last_name: "Simpson", email: "homer@simpson.com", password: "password")
+User.create(first_name: "Evel ", last_name: "Knievel", email: "evel@knievel.com", password: "password")
+User.create(first_name: "Robbie ", last_name: "Knievel", email: "robbie@knievel.com", password: "password")
+User.create(first_name: "Betsy ", last_name: "Gardner", email: "betsy@gardner.com", password: "password")
+User.create(first_name: "Jessie ", last_name: "Graff", email: "jessie@graff.com", password: "password")
+
+users = User.all
+
 30.times do
   random_name = names.sample
   names.delete(random_name)
@@ -82,7 +90,8 @@ fee = [
     name: random_name,
     description: Faker::Company.type,
     daily_fee: fee.sample,
-    location: cities.sample
+    location: cities.sample,
+    owner: users.sample
   )
   while @truck.features.size < 4
     feature = Feature.create(description: monster_features.sample)
