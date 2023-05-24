@@ -104,4 +104,5 @@ users = User.all
   puts "Location:#{@truck.location}"
   @truck.features.each { |e| puts e.description }
   puts "\n"
+
 end

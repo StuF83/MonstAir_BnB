@@ -25,11 +25,12 @@
     <%= submit_tag("Search") %>
   <% end %>
 
-  <i class="fa-solid fa-user nav-right"></i>
+  <div class="nav-right">
+     <%= render "shared/navbar" %>
+  </div>
+
+
 </nav>
-
     <%= yield %>
-
-
   </body>
 </html>
