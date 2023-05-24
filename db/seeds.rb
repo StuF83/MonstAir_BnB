@@ -8,7 +8,14 @@
 
 require 'faker'
 
-cities = ["hackney", "dalston", "shorditch", "greenwhich", "enfield"]
+cities = [
+  "hackney",
+  "dalston",
+  "shorditch",
+  "greenwhich",
+  "enfield"
+]
+
 names = [
   "Bigfoot",
   "Grave Digger",
@@ -59,7 +66,14 @@ monster_features = [
   "One carefull owner",
   "Sunroof"
 ]
-fee = [100, 150, 200, 250, 300]
+
+fee = [
+  100,
+  150,
+  200,
+  250,
+  300
+]
 
 30.times do
   random_name = names.sample
@@ -76,7 +90,9 @@ fee = [100, 150, 200, 250, 300]
   end
   @truck.save!
 
-  puts "Name:#{@truck.name}\nDaily Fee:#{@truck.daily_fee}\nLocation:#{@truck.location}"
+  puts "Name:#{@truck.name}"
+  puts "Daily Fee:#{@truck.daily_fee}"
+  puts "Location:#{@truck.location}"
   @truck.features.each { |e| puts e.description }
   puts "\n"
 end
