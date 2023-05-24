@@ -9,8 +9,47 @@
 require 'faker'
 
 cities = ["hackney", "dalston", "shorditch", "greenwhich", "enfield"]
-names = ["Bigfoot", "Grave Digger", "Maximum Destruction", "El Toro Loco", "Monster Mutt", "Zombie", "Megalodon", "Dragon", "EarthShaker, Son-uva Digger", "Bounty Hunter", "Avenger", "Iron Outlaw", "King Krunch", "Raminator", "Black Stallion", "Overkill Evolution", "Jurassic Attack", "Predator", "Gunslinger", "Madusa", "Scooby-Doo, Captain's Curse", "Mohawk Warrior", "Blue Thunder", "Gas Monkey Garage", "Northern Nightmare", "Storm Damage", "Bad Habit", "Backdraft"]
+names = [
+  "Bigfoot",
+  "Grave Digger",
+  "Maximum Destruction",
+  "El Toro Loco", "Monster Mutt",
+  "Zombie", "Megalodon", "Dragon",
+  "EarthShaker",
+  "Son-uva Digger",
+  "Bounty Hunter",
+  "Avenger",
+  "Iron Outlaw",
+  "King Krunch",
+  "Raminator",
+  "Black Stallion",
+  "Overkill Evolution",
+  "Jurassic Attack",
+  "Predator",
+  "Gunslinger",
+  "Madusa",
+  "Scooby-Doo",
+  "Captain's Curse",
+  "Mohawk Warrior",
+  "Blue Thunder",
+  "Gas Monkey Garage",
+  "Northern Nightmare",
+  "Storm Damage",
+  "Bad Habit",
+  "Backdraft"
+]
+
+monster_features = [
+  "cup holder",
+  "power stearing",
+  "selfie-stick holder",
+  "parking sensors",
+  "London Congestion Charge included",
+  "child seat fitted"
+
+]
 fee = [100, 150, 200, 250, 300]
+
 28.times do
   random_name = names.sample
   @truck = Truck.create(
