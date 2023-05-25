@@ -1,13 +1,19 @@
+.bordered-image {
+  border: 1px solid black;
+  padding: 1px;
+}
+
+
 .card {
-  width: 650px;
+  width: 520px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
   padding: 10px auto;
-  margin: 10px 0;
+  margin: 10px 0 10px 10px;
   background-color: #ffb347;
   padding: 20px;
-  margin-top: 10px;
+  border: 1px solid black;
   }
 
 img {
@@ -20,15 +26,17 @@ img {
   text-align: center;
   font-size: 24px;
   margin-bottom: 10px;
-  color: #ffb54e;
+  color: black;
   font-weight: 800;
   background-color: white;
+  padding: 10px;
+  border: 1px solid black;
 }
 
-.title {
-  background-color: white;
-  border: 1px solid black;
-  padding: 10px;
+.card-header:hover {
+  background-color: orange;
+  color: black;
+
 }
 
 .card-title {
