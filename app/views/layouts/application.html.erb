@@ -13,15 +13,6 @@
   <body>
 <nav class="navbar-lewagon">
   <a class="nav-left" href="/">MonstAir BnB</a>
-  <div class="homepage-link">
-    <i class="fas fa-home"></i>
-    <%= link_to("HOME PAGE", root_path) %>
-  </div>
-  <br>
-  <div class="view-more-link">
-  <i class="fa-solid fa-eye"></i>
-  <%= link_to("VIEW MORE TRUCKS", trucks_path) %>
-  </div>
 
   <%= form_tag(search_trucks_path, method: "get") do %>
     <%= label_tag(:q, "Location:") %>

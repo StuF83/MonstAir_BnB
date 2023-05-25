@@ -1,36 +1,31 @@
+<body class="userbody">
+  <div class="usercard" style="width: 1086px;">
 
-<%# <img src="Monster-truck.jpeg" class="card-image" alt="truck"/> %>
-<div class="container">
-    <%= image_tag("/Monster-truck.jpeg",
-    width: 520, height: 325, padding: 50, crop: :fill, class: "bordered-image") %>
-<div class="card">
-    <div class="title">
-      <h1 class="card-header"><%= @truck.name.upcase %></h1>
+    <h1 class="username"><%= "#{@truck.name}'s YARD" %></h1>
+    <div>
+        <%= form_with(model: [@truck, @booking], url: truck_bookings_path(@truck)) do |form| %>
+        <%= form.label :start_date %>
+        <%= form.date_field :start_date %>
+        <%= form.label :end_date %>
+        <%= form.date_field :end_date %>
+        <%= form.submit "BOOK THIS TRUCK" %>
+        <% end %>
     </div>
-      <h4 class="letters"><%= "Description"%></h4>
-      <p class="card-text"><%= "#{@truck.description}" %></p>
-      <hr class="card-line">
-      <h4 class="card-title"><%="Daily Rental Cost" %></h4>
-      <p class="card-text"><%= "£#{@truck.daily_fee }"%></p>
-      <hr class="card-line">
-      <h4 class="card-title"><%="location" %></h4>
-      <p class="card-text"><%= "#{@truck.location }"%></p>
-</div>
-</div>
-<div class="card containertwo">
-    <%= form_with(model: [@truck, @booking], url: truck_bookings_path(@truck)) do |form| %>
-    <%= form.label :start_date %>
-    <%= form.date_field :start_date %>
-    <%= form.label :end_date %>
-    <%= form.date_field :end_date %>
-    <%= form.submit "BOOK THIS TRUCK" %>
-    <% end %>
+     <div class="useractivity">
+      <div class="bookingscard", id="item">
+          <%= image_tag('mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'truck_image') %>
+      </div>
+      <div class="rentalscard", id="item">
+        <h2>Truck Details</h2>
+        <h4 class="letters"><%= "Description"%></h4>
+        <p class="card-text"><%= "#{@truck.description}" %></p>
+        <hr class="card-line">
+        <h4 class="card-title"><%="Daily Rental Cost" %></h4>
+        <p class="card-text"><%= "£#{@truck.daily_fee }"%></p>
+        <hr class="card-line">
+        <h4 class="card-title"><%="location" %></h4>
+        <p class="card-text"><%= "#{@truck.location }"%></p>
+      </div>
     </div>
   </div>
-</div>
-
-
-
-<%= link_to("HOME PAGE", root_path) %>
-<br>
-<%= link_to("VIEW MORE TRUCKS", trucks_path ) %>
+</body>
