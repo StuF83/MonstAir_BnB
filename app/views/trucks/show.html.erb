@@ -1,22 +1,30 @@
-<h1><%= @truck.name.upcase %></h1>
-<br>
-<h4><%= "Description"%></h4>
-<p><%= "#{@truck.description}" %></p>
-<h4><%="Daily Rental Cost" %></h4>
-<p><%= "£#{@truck.daily_fee }"%></p>
-<h4><%="location" %></h4>
-<p><%= "#{@truck.location }"%></p>
 
-<%= form_with(model: [@truck, @booking], url: truck_bookings_path(@truck)) do |form| %>
-  <%= form.label :start_date %>
-  <%= form.date_field :start_date %>
+<%# <img src="Monster-truck.jpeg" class="card-image" alt="truck"/> %>
+<div class="container">
+    <%= image_tag("/Monster-truck.jpeg",
+    width: 650, height: 400, padding: 50, crop: :fill) %>
+<div class="card">
+    <div class="title">
+      <h1 class="card-header"><%= @truck.name.upcase %></h1>
+    </div>
+      <h4 class="letters"><%= "Description"%></h4>
+      <p class="card-text"><%= "#{@truck.description}" %></p>
+      <hr class="card-line">
+      <h4 class="card-title"><%="Daily Rental Cost" %></h4>
+      <p class="card-text"><%= "£#{@truck.daily_fee }"%></p>
+      <hr class="card-line">
+      <h4 class="card-title"><%="location" %></h4>
+      <p class="card-text"><%= "#{@truck.location }"%></p>
+</div>
 
-  <%= form.label :end_date %>
-  <%= form.date_field :end_date %>
-
-  <%= form.submit "BOOK THIS TRUCK" %>
-<% end %>
-
-<%= link_to("HOME PAGE", root_path) %>
-<br>
-<%= link_to("VIEW MORE TRUCKS", trucks_path ) %>
+<div class="card">
+    <%= form_with(model: [@truck, @booking], url: truck_bookings_path(@truck)) do |form| %>
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+    <%= form.submit "BOOK THIS TRUCK" %>
+    <% end %>
+    </div>
+  </div>
+</div>
