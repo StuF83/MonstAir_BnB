@@ -4,15 +4,15 @@
     <% @trucks = trucks if @trucks.nil? %>
     <% @trucks.each do |truck| %>
       <div class="grid-item">
-        <div class="card">
+        <div>
           <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
-          <div class="card-content">
-          <div class="card-header">
+          <div class="card-index-content">
+          <div class="card-index-header">
             <h1><%= link_to("#{truck.name}", truck_path(truck)) %></h1>
             <p>Owner: <%= "#{truck.owner.first_name} #{truck.owner.last_name}" %></p>
             <p>Daily Fee <%= truck.daily_fee %></p>
           </div>
-            <ul class="card-text">
+            <ul class="card-index-text">
               <% truck.features.each do |feature| %>
                 <li><%= feature.description %></li>
               <% end %>
@@ -23,4 +23,3 @@
     <% end %>
   </div>
 </div>
-
