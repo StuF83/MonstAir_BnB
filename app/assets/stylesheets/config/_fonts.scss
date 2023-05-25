@@ -1,12 +1,20 @@
 // Import Google fonts
 // @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Asul:wght@700&family=Bebas+Neue&family=Oswald:wght@500&family=Rubik+Vinyl&display=swap');
+
+  // @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lato&family=Luckiest+Guy&family=Montserrat:wght@300&family=Oswald:wght@500&family=Roboto+Condensed&display=swap');
 
 // Define fonts for body and headers
 // $body-font: "Work Sans", "Helvetica", "sans-serif";
 // $headers-font: "Nunito", "Helvetica", "sans-serif";
-$body-font: "Oswald";
-$headers-font: "Oswald";
+
+$body-font: "Montserrat";
+// $body-font: "Oswald";
+// $body-font: "RobotoCondensed";
+// $body-font: "Lato";
+// $body-font: "Luckiest Guy";
+$headers-font: "Luckiest Guy";
+
 
 
 // To use a font file (.woff) uncomment following lines

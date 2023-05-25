@@ -8,27 +8,102 @@
 
 require 'faker'
 
-cities = ["hackney", "dalston", "shorditch", "greenwhich", "enfield"]
-fee = [100, 150, 200, 250, 300]
+cities = [
+  "hackney",
+  "dalston",
+  "shorditch",
+  "greenwhich",
+  "enfield"
+]
 
-5.times do
-  @user = User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: 'password' # Set a default password for the users
+names = [
+  "Bigfoot",
+  "Grave Digger",
+  "Maximum Destruction",
+  "El Toro Loco", "Monster Mutt",
+  "Zombie", "Megalodon", "Dragon",
+  "EarthShaker",
+  "Son-uva Digger",
+  "Bounty Hunter",
+  "Avenger",
+  "Iron Outlaw",
+  "King Krunch",
+  "Raminator",
+  "Black Stallion",
+  "Overkill Evolution",
+  "Jurassic Attack",
+  "Predator",
+  "Gunslinger",
+  "Madusa",
+  "Scooby-Doo",
+  "Captain's Curse",
+  "Mohawk Warrior",
+  "Blue Thunder",
+  "Gas Monkey Garage",
+  "Northern Nightmare",
+  "Storm Damage",
+  "Bad Habit",
+  "Backdraft"
+]
+
+monster_features = [
+  "Cup holder",
+  "Power stearing",
+  "Selfie-stick holder",
+  "Parking sensors",
+  "London Congestion Charge included",
+  "Child seat fitted",
+  "Cruise controll",
+  "Airbags",
+  "Climage controll",
+  "2,000 BHp Engine",
+  "Tire Height: 1.17 meters",
+  "Fule consumption 6mpg",
+  "Top Speed 70mph",
+  "Car crushability rating 11",
+  "Fluffy dice",
+  "Cruise controll",
+  "One carefull owner",
+  "Sunroof",
+  "Gun rack"
+]
+
+fee = [
+  100,
+  150,
+  200,
+  250,
+  300
+]
+
+User.create(first_name: "Homer", last_name: "Simpson", email: "homer@simpson.com", password: "password")
+User.create(first_name: "Evel", last_name: "Knievel", email: "evel@knievel.com", password: "password")
+User.create(first_name: "Robbie", last_name: "Knievel", email: "robbie@knievel.com", password: "password")
+User.create(first_name: "Betsy", last_name: "Gardner", email: "betsy@gardner.com", password: "password")
+User.create(first_name: "Jessie", last_name: "Graff", email: "jessie@graff.com", password: "password")
+
+users = User.all
+
+30.times do
+  random_name = names.sample
+  names.delete(random_name)
+  @truck = Truck.create(
+    name: random_name,
+    description: Faker::Company.type,
+    daily_fee: fee.sample,
+    location: cities.sample,
+    owner: users.sample
   )
-  6.times do
-    @truck = Truck.create(
-      name: Faker::Name.name,
-      description: Faker::Company.type,
-      daily_fee: fee.sample,
-      location: cities.sample,
-      owner_id: @user.id,
-      owner_first_name: @user.first_name,
-      owner_second_name: @user.last_name
-    )
-    puts "Name:#{@truck.name}\nDaily Fee:#{@truck.description}\nDaily Fee:#{@truck.daily_fee}\nLocation:#{@truck.location}"
-    @truck.save!
+  while @truck.features.size < 4
+    new_feature = Feature.create(description: monster_features.sample)
+    truck_features = @truck.features.map(&:description)
+    @truck.features << new_feature unless truck_features.include?(new_feature.description)
   end
+  @truck.save!
+
+  puts "Name:#{@truck.name}"
+  puts "Daily Fee:#{@truck.daily_fee}"
+  puts "Location:#{@truck.location}"
+  @truck.features.each { |e| puts e.description }
+  puts "\n"
 end
