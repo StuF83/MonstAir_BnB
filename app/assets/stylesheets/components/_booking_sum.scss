@@ -1,4 +1,4 @@
-.rentalbod{
+.bookingbody{
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   }
 }
 
-.rentalcar{
+.bookingcard{
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -27,7 +27,7 @@
   color:black;
 }
 
-.rentaldetai{
+.bookingdetail{
   display: flex;
   flex-direction: column;
   border-style: solid;
@@ -39,11 +39,15 @@
   width: 75%;
 }
 
-.rentalspageformfie{
-  text-transform: capitalize;
-  font-weight:lighter;
-}
-
-.rentalsformsectio{
-  margin-bottom: 10px;
+.internalbook {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: thick;
+  border-color: black;
+  text-align: center;
+  padding: 10px;
+  background-color:#fcfaf9;
+  width: 75%;
+  align-self: center;
 }
