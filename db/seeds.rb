@@ -1,5 +1,8 @@
 require 'faker'
 
+User.destroy_all
+Truck.destroy_all
+
 cities = [
   "hackney",
   "dalston",

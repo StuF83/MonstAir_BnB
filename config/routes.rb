@@ -6,10 +6,15 @@ Rails.application.routes.draw do
 
   # root "articles#index"
   # get "booking/:id", to: "bookings#show"
+  delete "trucks/:id", to: "trucks#destroy", as: 'destroy_truck'
+  get "trucks/:id/edit", to: "trucks#edit", as: 'edit_truck'
+  patch "trucks/:id", to: "trucks#update"
+
   get 'trucks/:id/owner_show', to: 'trucks#owner_show', as: 'truck_owner_show'
   get 'trucks/search', to: 'trucks#search', as: 'search_trucks'
   get '/bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: 'confirmation'
   get 'user/area', to: 'pages#user', as: 'user_area'
+
 
   # get 'trucks/search', to: 'trucks#search', as: 'search_trucks'
   # get '/bookings/:booking_id/confirmation', to: 'bookings#confirmation', as: 'confirmation'

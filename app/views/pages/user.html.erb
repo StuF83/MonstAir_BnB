@@ -26,7 +26,13 @@
         <h2>YOUR RENTALS</h2>
         <% @rented.each do |rented_truck| %>
           <div class="rentals">
-            <%= "Truck Name: #{rented_truck}" %>
+            <%= "Truck Name: #{rented_truck.name}" %>
+            <br>
+            <%= "Daily Rental: £#{rented_truck.daily_fee.to_i}" %>
+            <br>
+            <p><%= link_to("REMOVE", destroy_truck_path(rented_truck.id), data: {turbo_method: :delete} ) %></p>
+            <br>
+            <p><%= link_to("EDIT", edit_truck_path(rented_truck.id)) %></p>
           </div>
         <% end %>
       <% end %>

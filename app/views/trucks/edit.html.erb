@@ -1,0 +1,27 @@
+<body class="editbody">
+  <div class="editcard">
+    <h1>Edit Your Truck</h1>
+    <div class="editdetails">
+      <%= form_with model: @truck do |f| %>
+        <div class="editformsection">
+        <%= f.label :name %>
+        <br>
+        <%= f.text_field :name %>
+        </div>
+        <div class="editformsection">
+        <%= f.label :daily_fee %>
+        <br>
+        <%= f.text_field :daily_fee %>
+        </div>
+        <div class="editformsection">
+        <%= f.label :description %>
+        <br>
+        <%= f.text_field :description %>
+        <br>
+        </div>
+        <br>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</body>
