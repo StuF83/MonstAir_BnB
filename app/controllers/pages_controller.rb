@@ -11,10 +11,11 @@ class PagesController < ApplicationController
 
     @trucks.each do |truck|
       if truck.owner_id == @id
-        @rentals << truck.name
+        @rentals << truck
+        @price = truck.daily_fee
+
       end
     end
-
     @rented = @rentals
   end
 end
