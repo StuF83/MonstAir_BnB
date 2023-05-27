@@ -1,18 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 require 'faker'
 
 cities = [
   "hackney",
   "dalston",
-  "shorditch",
-  "greenwhich",
+  "shoreditch",
+  "greenwich",
   "enfield"
 ]
 
@@ -47,25 +39,25 @@ names = [
 ]
 
 monster_features = [
-  "Cup holder",
-  "Power stearing",
-  "Selfie-stick holder",
-  "Parking sensors",
-  "London Congestion Charge included",
-  "Child seat fitted",
-  "Cruise controll",
+  "Cup Holder",
+  "Power Steering",
+  "Selfie-Stick Holder",
+  "Parking Sensors",
+  "London Congestion Charge Included",
+  "Child Seat Fitted",
+  "Cruise Control",
   "Airbags",
-  "Climage controll",
-  "2,000 BHp Engine",
-  "Tire Height: 1.17 meters",
-  "Fule consumption 6mpg",
-  "Top Speed 70mph",
-  "Car crushability rating 11",
-  "Fluffy dice",
-  "Cruise controll",
-  "One carefull owner",
+  "Climate Control",
+  "Sound System",
+  "Chick Magnet",
+  "Eco Friendly",
+  "Which? Truck Of The Year",
+  "Car Crushability Rating 11",
+  "Fluffy Dice",
+  "Cruise Control",
+  "One Careful Owner",
   "Sunroof",
-  "Gun rack"
+  "Gun Rack"
 ]
 
 fee = [
@@ -84,7 +76,7 @@ User.create(first_name: "Jessie", last_name: "Graff", email: "jessie@graff.com",
 
 users = User.all
 
-30.times do
+10.times do
   random_name = names.sample
   names.delete(random_name)
   @truck = Truck.create(
@@ -94,6 +86,10 @@ users = User.all
     location: cities.sample,
     owner: users.sample
   )
+  @truck.update(owner_first_name: @truck.owner.first_name)
+  @truck.update(owner_second_name: @truck.owner.last_name)
+
+
   while @truck.features.size < 4
     new_feature = Feature.create(description: monster_features.sample)
     truck_features = @truck.features.map(&:description)
@@ -104,6 +100,7 @@ users = User.all
   puts "Name:#{@truck.name}"
   puts "Daily Fee:#{@truck.daily_fee}"
   puts "Location:#{@truck.location}"
+  puts "Owner:#{@truck.owner.first_name}"
   @truck.features.each { |e| puts e.description }
   puts "\n"
 end

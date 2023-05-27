@@ -1,20 +1,24 @@
-
 <div class="pagebody everything">
   <div class="grid">
     <% @trucks = trucks if @trucks.nil? %>
     <% @trucks.each do |truck| %>
-      <div class="grid-item">
+      <div class="index-grid-item">
         <div>
           <%= image_tag 'mj22_mjs2_20220116_sanantoniotx_kl_11488.jpeg', class: 'card-img'%>
-          <div class="card-index-content">
+        </div>
+        <div class="card-index-content">
           <div class="card-index-header">
             <h1><%= link_to("#{truck.name}", truck_path(truck)) %></h1>
-            <p>Owner: <%= "#{truck.owner.first_name} #{truck.owner.last_name}" %></p>
-            <p>Daily Fee <%= truck.daily_fee %></p>
+            <div class=index-truck-details>
+              <p>Owner: <%= "#{truck.owner.first_name} #{truck.owner.last_name}" %></p>
+              <p>Daily Rental: <%= "£#{truck.daily_fee.to_i}" %></p>
+            </div>
           </div>
+          <div>
             <ul class="card-index-text">
               <% truck.features.each do |feature| %>
-                <li><%= feature.description %></li>
+                  <%= "#{feature.description}" %>
+                  <br>
               <% end %>
             </ul>
           </div>

@@ -20,10 +20,10 @@ class BookingsController < ApplicationController
   def create
     user = current_user
     truck = Truck.find(params[:truck_id])
-    booking = Booking.new(truck: truck, start_date: params[:start_date], end_date: params[:end_date], total_cost: params[:total_cost], user: user)
+    @booking = Booking.new(truck: truck, start_date: params[:start_date], end_date: params[:end_date], total_cost: params[:total_cost], user: user)
 
-    if booking.save!
-      redirect_to confirmation_path(booking)
+    if @booking.save!
+      redirect_to confirmation_path(@booking)
     else
       render 'trucks/show'
     end
