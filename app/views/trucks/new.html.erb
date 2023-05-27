@@ -1,11 +1,30 @@
-<h1>Rent your truck here!</h1>
-
-<%= form_with model: @truck do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :daily_fee %>
-  <%= f.number_field :daily_fee %>
-  <%= f.submit %>
-<% end %>
+<body class="rentalbody">
+  <div class="rentalcard">
+    <h1>Rent Your Truck</h1>
+    <div class="rentaldetails">
+      <%= form_with model: @truck do |f| %>
+        <div class="rentalsformsection">
+        <%= f.label :"What's Your Truck's Name?", class: "rentalspageformfield" %>
+        <br>
+        <%= f.text_field :name %>
+        </div>
+        <div class="rentalsformsection">
+        <%= f.label :"Tell Us A Bit About Your Beast", class: "rentalspageformfield"  %>
+        <br>
+        <%= f.text_field :description %>
+        </div>
+        <div class="rentalsformsection">
+        <%= f.label :"Location, Please" , class: "rentalspageformfield"%>
+        <br>
+        <%= f.text_field :location %>
+        </div>
+        <div class="rentalsformsection">
+        <%= f.label :"How Much Are You Charging For Your Monsta?" , class: "rentalspageformfield"%>
+        <br>
+        <%= f.number_field :daily_fee %>
+        </div>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</body>
