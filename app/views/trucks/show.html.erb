@@ -1,9 +1,9 @@
 <body class="userbody">
   <div class="usercard" style="width: 1086px;">
 
-    <h1 class="username"><%= "#{@truck.name}'s YARD" %></h1>
+    <h1 class="username"><%= "#{@truck.name}" %></h1>
     <div>
-        <%= form_with(model: [@truck, @booking], url: truck_bookings_path(@truck)) do |form| %>
+        <%= form_with(model: [@truck, @booking], url: new_truck_booking_path(@truck), method: :get) do |form| %>
         <%= form.label :start_date %>
         <%= form.date_field :start_date %>
         <%= form.label :end_date %>
@@ -17,11 +17,14 @@
       </div>
       <div class="rentalscard", id="item">
         <h2>Truck Details</h2>
+        <h4 class="letters"><%= "Owner"%></h4>
+        <p class="card-text"><%= "#{@truck.owner_first_name} #{@truck.owner_second_name}" %></p>
+        <hr class="card-line">
         <h4 class="letters"><%= "Description"%></h4>
         <p class="card-text"><%= "#{@truck.description}" %></p>
         <hr class="card-line">
         <h4 class="card-title"><%="Daily Rental Cost" %></h4>
-        <p class="card-text"><%= "£#{@truck.daily_fee }"%></p>
+        <p class="card-text"><%= "£#{@truck.daily_fee.to_i}"%></p>
         <hr class="card-line">
         <h4 class="card-title"><%="location" %></h4>
         <p class="card-text"><%= "#{@truck.location }"%></p>
