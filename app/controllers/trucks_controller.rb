@@ -33,6 +33,21 @@ class TrucksController < ApplicationController
     end
   end
 
+  def edit
+    @truck = Truck.find(params[:id])
+  end
+
+  def update
+    @truck = Truck.find(params[:id])
+    @truck.update(truck_params)
+    redirect_to truck_path(@truck)
+  end
+
+  def destroy
+    @truck = Truck.find(params[:id])
+    @truck.destroy
+  end
+
   private
   def truck_params
     params.require(:truck).permit(:name, :description, :location, :daily_fee)
