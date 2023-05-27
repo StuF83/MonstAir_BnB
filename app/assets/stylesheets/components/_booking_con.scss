@@ -1,0 +1,49 @@
+.rentalbod{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  h1{
+    font-size: 100px;
+    margin-bottom: 10px;
+  }
+}
+
+.rentalcar{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  border-style: solid;
+  border-width: thick;
+  border-color: black;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  background-color: rgb(238, 121, 33);
+  color:black;
+}
+
+.rentaldetai{
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: thick;
+  border-color: black;
+  text-align: center;
+  padding: 10px;
+  background-color:rgba(255, 69, 0, 1);
+  width: 75%;
+}
+
+.rentalspageformfie{
+  text-transform: capitalize;
+  font-weight:lighter;
+}
+
+.rentalsformsectio{
+  margin-bottom: 10px;
+}
